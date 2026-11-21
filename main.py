@@ -234,7 +234,7 @@ MARKERS = [
     (2, 16.0, 54.0),    # Poland
     (3, 46.7, 24.6),    # Riyadh
     (4, 34.5, 31.5),    # Gaza
-    (5, 33.0, 35.0),    # Antalya
+    (5, 30.5, 37.5),    # Antalya (nudged NW so its disc clears Gaza's)
     (6, 4.4, 50.9),     # Brussels
     (7, -77.0, -12.0),  # Lima
     (8, 106.9, 47.9),   # Ulaanbaatar
@@ -262,8 +262,8 @@ def draw_map(page):
     # Numbered markers.
     for num, m_lon, m_lat in MARKERS:
         x, y = map_xy(m_lon, m_lat)
-        page.disc(x, y, 8, RED)
-        page.ring(x, y, 8, INK)
+        page.disc(x, y, 6, RED)
+        page.ring(x, y, 6, INK)
         label = str(num)
         page.text(x - text_width(label, 1) // 2, y - 3, label, 1, PAPER)
 
